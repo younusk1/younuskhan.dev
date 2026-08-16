@@ -26,7 +26,6 @@ body {
   border-bottom: 3px solid #f0b429;
 }
 
-/* Headshot */
 .profile-photo {
   width: 150px;
   height: 150px;
@@ -60,7 +59,6 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Email button */
 .btn {
   display: inline-block;
   background: #f0b429;
@@ -78,7 +76,7 @@ body {
   transform: scale(1.04);
 }
 
-/* Social Links */
+/* Social Links (icon buttons) */
 .social-links {
   margin-top: 1.5rem;
   display: flex;
@@ -88,21 +86,33 @@ body {
 }
 
 .social-link {
-  display: inline-block;
-  color: #eaeef2;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  padding: 0.5rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
   border: 2px solid #f0b429;
-  border-radius: 40px;
+  border-radius: 50%;
+  color: #eaeef2;
   transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.social-link svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+  transition: fill 0.25s ease;
 }
 
 .social-link:hover {
   background: #f0b429;
   color: #0b1a2e;
-  transform: scale(1.05);
+  transform: scale(1.08);
+}
+
+.social-link:hover svg {
+  fill: #0b1a2e;
 }
 
 /* Sections */
@@ -120,7 +130,7 @@ h2 {
   padding-left: 1rem;
 }
 
-/* Skills */
+/* Skills (tag cloud) */
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
@@ -140,6 +150,34 @@ h2 {
 .skill-tag:hover {
   background: #f0b429;
   color: #0b1a2e;
+}
+
+/* Achievements */
+.achievements-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.achievements-list li {
+  background: #122c44;
+  padding: 1.2rem 1.8rem;
+  border-radius: 14px;
+  border-left: 6px solid #f0b429;
+  font-size: 1rem;
+  line-height: 1.6;
+  transition: background 0.2s;
+}
+
+.achievements-list li:hover {
+  background: #1a3452;
+}
+
+.achievements-list strong {
+  color: #f0b429;
+  font-weight: 600;
 }
 
 /* Projects */
@@ -238,6 +276,66 @@ h2 {
   font-weight: 500;
 }
 
+/* Education */
+.edu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.edu-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  background: #122c44;
+  padding: 1rem 1.8rem;
+  border-radius: 12px;
+  gap: 0.5rem 1.5rem;
+  border-left: 6px solid #f0b429;
+  transition: background 0.2s;
+}
+
+.edu-item:hover {
+  background: #1a3452;
+}
+
+.edu-degree {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #f0b429;
+  flex: 0 0 240px;
+}
+
+.edu-institution {
+  flex: 1;
+  opacity: 0.95;
+  font-size: 1.05rem;
+}
+
+/* Hobbies & Interests */
+.hobbies-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+}
+
+.hobby-tag {
+  background: #1c3857;
+  padding: 0.6rem 1.8rem;
+  border-radius: 40px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #eaeef2;
+  border: 2px solid #f0b429;
+  transition: all 0.25s ease;
+}
+
+.hobby-tag:hover {
+  background: #f0b429;
+  color: #0b1a2e;
+  transform: scale(1.04);
+}
+
 /* Footer */
 footer {
   background: #0a1628;
@@ -254,6 +352,24 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+.footer-icon {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  color: #f0b429;
+  transition: color 0.2s;
+}
+
+.footer-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.footer-icon:hover {
+  color: #ffffff;
 }
 
 .copy {
@@ -278,6 +394,14 @@ footer a:hover {
   .exp-role {
     flex-basis: auto;
   }
+  .edu-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+  .edu-degree {
+    flex-basis: auto;
+  }
   h2 {
     font-size: 1.8rem;
   }
@@ -289,7 +413,22 @@ footer a:hover {
     height: 120px;
   }
   .social-link {
-    padding: 0.4rem 1rem;
-    font-size: 0.9rem;
+    width: 48px;
+    height: 48px;
+  }
+  .social-link svg {
+    width: 22px;
+    height: 22px;
+  }
+  .achievements-list li {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+  .edu-item {
+    padding: 0.8rem 1.2rem;
+  }
+  .hobby-tag {
+    font-size: 1rem;
+    padding: 0.4rem 1.2rem;
   }
 }
